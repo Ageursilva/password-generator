@@ -48,27 +48,28 @@ function calculateQuality(){
       )
 
       securityIndicatorBarEl.style.width=`${percent}%`
-      if (percent >69){
+      if (percent > 69) {
+        
         securityIndicatorBarEl.classList.remove("critical")
         securityIndicatorBarEl.classList.remove("warning")
         securityIndicatorBarEl.classList.add("safe")
-
-      }else if(percent>50){
+      } else if (percent > 50) {
+        
         securityIndicatorBarEl.classList.remove("critical")
-        securityIndicatorBarEl.classList.remove("safe")
         securityIndicatorBarEl.classList.add("warning")
-
-      }else{
-        securityIndicatorBarEl.classList.remove("warnig")
         securityIndicatorBarEl.classList.remove("safe")
+      } else {
+        
         securityIndicatorBarEl.classList.add("critical")
-
+        securityIndicatorBarEl.classList.remove("warning")
+        securityIndicatorBarEl.classList.remove("safe")
       }
-       if (percent>= 100){
+
+      if (percent >= 100) {
         securityIndicatorBarEl.classList.add("completed")
-        }else{
-        securityIndicatorBarEl.classList.remove("completed") 
-        }
+      } else {
+        securityIndicatorBarEl.classList.remove("completed")
+      }
 }
 function calculeteFontSize(){
     if(passwordLenght > 45){
